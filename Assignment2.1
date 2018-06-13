@@ -1,0 +1,55 @@
+'''
+Q. Write a Python Program to implement your own myreduce() function which works exactly
+like Python's built-in function reduce()
+
+Problem Statement 2:
+Write a Python program to implement your own myfilter() function which works exactly
+like Python's built-in function filter()
+'''
+#myreducefunction
+
+# multipy each element of list and give the multiplication of all numbers
+def mul(lst):                            
+    out = 1
+    for x in lst[:]:
+        out = out * x
+    return out
+
+# add each element of list and give the sum of all numbers
+def add(lst):
+    out = 0
+    for x in lst[:]:
+        out = out + x
+    return out
+
+#myreduce function which takes function and list as parameter
+def myreduce(fun, lst):               
+    return(fun(lst))
+    
+l = [1,2,3,4,5]
+    
+print(myreduce(mul, l))
+print(myreduce(add, l)) 
+
+#myfilter function
+
+def even_check(lst):
+    lst_out = []
+    for x in lst[:]:
+        if x%2 == 0:            
+            lst_out.append(x)
+    return(lst_out)     
+
+def odd_check(lst):
+    lst_out = []
+    for x in lst[:]:
+        if x%2 != 0:            
+            lst_out.append(x)
+    return(lst_out) 
+    
+def myfilter(fun, lst):              
+    print(lst)
+    return(fun(lst))
+
+print(myfilter(even_check, l))
+print(myfilter(odd_check, l))
